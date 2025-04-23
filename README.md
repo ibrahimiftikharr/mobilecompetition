@@ -101,9 +101,3 @@ We’ve integrated a custom splash screen featuring the **COMSATS logo** to enha
 **Team DracoDev** – Computer Science Students at COMSATS
 
 ---
-
-## 📬 Contact
-
-For queries or feedback: **team.edubyte@comsats.edu.pk**
-
----
