@@ -1,4 +1,4 @@
-```markdown
+
 # 📚 EduByte — AI-Powered Microlearning App
 
 EduByte is a mobile-first EdTech app that reimagines traditional learning for the modern student. Designed with both **Students** and **Tutors** in mind, the platform delivers **bite-sized, AI-enhanced micro-courses** for fast and effective learning on the go.
