@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:theloanapp/services/auth_service.dart';
 
 Widget CustomButton(String text, Function function)
 {
@@ -10,7 +9,7 @@ Widget CustomButton(String text, Function function)
   },
 
     style: ElevatedButton.styleFrom(
-        backgroundColor: Color(0xFFD8F474),
+        backgroundColor: Color(0xFF7658F8),
         foregroundColor: Colors.black,
         minimumSize: Size(330.w,60.h),
         shape: RoundedRectangleBorder(

@@ -6,8 +6,8 @@ import 'package:theloanapp/widgets/signup_field.dart';
 import 'package:theloanapp/screens/signin_page.dart';
 import 'package:theloanapp/services/auth_service.dart';
 import 'package:firebase_auth/firebase_auth.dart';
-import 'package:theloanapp/screens/borrower_screens/BorrowerNavigation.dart';
-import 'package:theloanapp/screens/investor_screens/InvestorNavigation.dart';
+import 'package:theloanapp/screens/student_screens/StudentNavigation.dart';
+import 'package:theloanapp/screens/instructor_screens/instructor_navigation.dart';
 
 
 class SignupPage extends StatefulWidget {
@@ -20,7 +20,7 @@ class SignupPageState extends State<SignupPage> {
   final TextEditingController passwordController = TextEditingController();
   final TextEditingController confirmPasswordController = TextEditingController();
 
-  String selectedRole = "Investor";
+  String selectedRole = "instructor";
 
   AuthService authService = AuthService();
 
@@ -41,17 +41,17 @@ class SignupPageState extends State<SignupPage> {
 
     if (user != null)
     {
-      if(selectedRole=='Investor')
+      if(selectedRole=='instructor')
         {
           Navigator.of(context).pushAndRemoveUntil(
-            MaterialPageRoute(builder: (context) => InvestorNavigation(currUser: user)),
+            MaterialPageRoute(builder: (context) => InstructorNavigation(currentUser: user)),
                 (Route<dynamic> route) => false,
           );
         }
       else
         {
           Navigator.of(context).pushAndRemoveUntil(
-            MaterialPageRoute(builder: (context) => BorrowerNavigationn(currUser: user)),
+            MaterialPageRoute(builder: (context) => StudentNavigation(currentUser: user)),
                 (Route<dynamic> route) => false,
           );
         }
@@ -115,22 +115,22 @@ class SignupPageState extends State<SignupPage> {
                 selectedColor: Colors.white,
                 fillColor: Colors.black,
                 isSelected: [
-                  selectedRole == "Investor",
-                  selectedRole == "Borrower"
+                  selectedRole == "instructor",
+                  selectedRole == "student"
                 ],
                 onPressed: (int index) {
                   setState(() {
-                    selectedRole = index == 0 ? "Investor" : "Borrower";
+                    selectedRole = index == 0 ? "instructor" : "student";
                   });
                 },
                 children: [
                   Padding(
                     padding: EdgeInsets.all(10),
-                    child: Text("Investor"),
+                    child: Text("Instructor"),
                   ),
                   Padding(
                     padding: EdgeInsets.all(10),
-                    child: Text("Borrower"),
+                    child: Text("Student"),
                   ),
                 ],
               ),

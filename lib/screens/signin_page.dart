@@ -5,8 +5,8 @@ import 'package:theloanapp/widgets/scaffold.dart';
 import 'package:theloanapp/widgets/signup_button.dart';
 import 'package:theloanapp/widgets/signup_field.dart';
 import 'package:theloanapp/screens/signup_page.dart';
-import 'package:theloanapp/screens/borrower_screens/BorrowerNavigation.dart';
-import 'package:theloanapp/screens/investor_screens/InvestorNavigation.dart';
+import 'package:theloanapp/screens/student_screens/StudentNavigation.dart';
+import 'package:theloanapp/screens/instructor_screens/instructor_navigation.dart';
 import 'package:theloanapp/services/auth_service.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
@@ -47,15 +47,14 @@ class SigninPageState extends State<SigninPage>{
         if (userDoc.exists) {
           String role = userDoc['role'];
           scaffold('Signed into your ${role} account!', context);
-
-          if (role == 'Investor') {
+          if (role == 'instructor') {
             Navigator.of(context).pushAndRemoveUntil(
-              MaterialPageRoute(builder: (context) => InvestorNavigation(currUser: user)),
+              MaterialPageRoute(builder: (context) => InstructorNavigation(currentUser: user)),
                   (Route<dynamic> route) => false,
             );
-          } else if (role == 'Borrower') {
+          } else if (role == 'student') {
             Navigator.of(context).pushAndRemoveUntil(
-              MaterialPageRoute(builder: (context) => BorrowerNavigationn(currUser: user)),
+              MaterialPageRoute(builder: (context) => StudentNavigation(currentUser: user)),
                   (Route<dynamic> route) => false,
             );
           } else {

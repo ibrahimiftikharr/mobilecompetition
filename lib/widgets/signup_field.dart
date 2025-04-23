@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:google_fonts/google_fonts.dart';
 
 
 Widget CustomField(String hint, bool hide, TextEditingController controller)
@@ -13,7 +12,7 @@ Widget CustomField(String hint, bool hide, TextEditingController controller)
           borderSide: BorderSide(color: Colors.grey)
       ),
       focusedBorder: UnderlineInputBorder(
-          borderSide: BorderSide(color: Colors.lightGreen,width: 2)
+          borderSide: BorderSide(color: Color(0xFF7658F8),width: 2)
       ),
     ),
   );

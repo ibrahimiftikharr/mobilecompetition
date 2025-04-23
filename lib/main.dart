@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:theloanapp/screens/signup_page.dart';
@@ -9,7 +10,7 @@ import 'package:firebase_core/firebase_core.dart';
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
   await Firebase.initializeApp();
-  runApp(MyApp());
+  runApp(ProviderScope(child: MyApp()));
 }
 
 class MyApp extends StatelessWidget {
@@ -23,7 +24,7 @@ class MyApp extends StatelessWidget {
         return MaterialApp(
           debugShowCheckedModeBanner: false,
           theme: ThemeData(primarySwatch: Colors.blue),
-          title: 'Loan App',
+          title: 'Study App',
           home: StartScreen(),
 
         );
@@ -98,7 +99,7 @@ class StartScreen extends StatelessWidget {
                 SizedBox(height: 10.h),
 
                 Text(
-                  "Loan, Shop and Pay with Insting Loan",
+                  "The only study app you'll ever need",
                   textAlign: TextAlign.center,
                   style: GoogleFonts.poppins(
                     fontSize: 20.sp,
@@ -110,7 +111,7 @@ class StartScreen extends StatelessWidget {
                 SizedBox(height: 16.h),
 
                 Text(
-                  "Platform that empowers individuals to explore the exciting realms of loan, shop, and pay later with InstingLoan.",
+                  "Platform that empowers individuals to upload class study materials, create electronic flashcards to study.",
                   textAlign: TextAlign.center,
                   style: GoogleFonts.poppins(
                     fontSize: 14.sp,
@@ -122,7 +123,7 @@ class StartScreen extends StatelessWidget {
 
                 Column(
                   children: [
-                    myButton("Create new account", Color(0xFFD1F272), Colors.black,context,'signup'),
+                    myButton("Create new account", Color(0xFF7658F8), Colors.black,context,'signup'),
                     SizedBox(height: 12.h),
                     myButton("I already have an account", Colors.black, Colors.white,context,'signin'),
                   ],

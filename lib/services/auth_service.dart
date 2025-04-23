@@ -4,7 +4,7 @@ import 'package:flutter/cupertino.dart';
 import 'package:theloanapp/widgets/scaffold.dart';
 
 class AuthService {
-  final FirebaseAuth firebaseAuth=FirebaseAuth.instance;
+  static final FirebaseAuth firebaseAuth=FirebaseAuth.instance;
   final FirebaseFirestore firestore=FirebaseFirestore.instance;
 
 
@@ -57,7 +57,7 @@ class AuthService {
   }
 
 
-  Future<void> logout() async {
+  static Future<void> logout() async {
     try {
       await firebaseAuth.signOut();
       print('User logged out successfully');
