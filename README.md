@@ -98,7 +98,7 @@ We’ve integrated a custom splash screen featuring the **COMSATS logo** to enha
 
 ## 💡 Developed By
 
-**Team EduByte** – Computer Science Students at COMSATS
+**Team DracoDev** – Computer Science Students at COMSATS
 
 ---
 
